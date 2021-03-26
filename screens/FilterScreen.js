@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { StyleSheet, View, Text, Platform, Switch } from 'react-native';
+import { StyleSheet, View, Text, Switch } from 'react-native';
 import { HeaderButtons, Item } from "react-navigation-header-buttons";
 
 import CustomHeaderButton from '../components/CustomHeaderButton';
