@@ -22,12 +22,13 @@ const ListItem = props => {
     );
 };
 
+/**MealDetailScreen */
 const MealDetailScreen = props => {
     const availableMeals = useSelector(state => state.meals.meals);
     const mealId = props.navigation.getParam('mealId');
     const meal = availableMeals.find(elem => elem.id === mealId);
     const dispatch = useDispatch();
-    
+
     const toggleFavoriteHandler = useCallback(() => {
         dispatch(toggleFavorite(mealId))
     }, [dispatch, mealId]);
