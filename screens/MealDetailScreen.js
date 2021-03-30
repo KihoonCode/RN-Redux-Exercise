@@ -7,7 +7,6 @@ import { HeaderButtons, Item } from 'react-navigation-header-buttons';
 import CustomHeaderButton from '../components/CustomHeaderButton';
 import Colors from '../constants/Colors';
 import { toggleFavorite } from '../store/actions/meals';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 const ListItem = props => {
     return (
@@ -41,6 +40,7 @@ const MealDetailScreen = props => {
         props.navigation.setParams({ toggleFav: toggleFavoriteHandler });
     }, [toggleFavoriteHandler]);
 
+    // useEffect
     useEffect(() => {
         props.navigation.setParams({ isFav: isFavorite });
     }, [isFavorite]);
