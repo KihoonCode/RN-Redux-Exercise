@@ -22,7 +22,7 @@ const ListItem = props => {
     );
 };
 
-/**MealDetailScreen */
+/**MealDetailScreen code */
 const MealDetailScreen = props => {
     const availableMeals = useSelector(state => state.meals.meals);
     const mealId = props.navigation.getParam('mealId');
