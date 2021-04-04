@@ -1,13 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { FlatList, View, StyleSheet } from 'react-native'
+import { useSelector } from 'react-redux';
 
 import MealItem from './MealItem';
 
 const MealList = props => {
+    const favoriteMeals = useSelector(state => state.meals.favoriteMeal);
+
     /**
      * Renders appropriate meal based on selected category.
      */
     const renderMealItems = itemData => {
+        const isFav = favoriteMeals.some(meal => meal.id === itemData.item.id);
+
         return (
             <MealItem
                 onSelected={() => {
@@ -16,7 +21,8 @@ const MealList = props => {
                             routeName: 'MealDetail',
                             params: {
                                 mealId: itemData.item.id,
-                                title: itemData.item.title
+                                title: itemData.item.title,
+                                isFav: isFav 
                             }
                         })
                 }}
